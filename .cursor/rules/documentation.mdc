@@ -1,0 +1,53 @@
+---
+description: Documentation standards for all markdown files in this repository
+globs: "**/*.md"
+alwaysApply: true
+---
+
+# Documentation Standards
+
+All markdown documentation in this repository must follow these conventions.
+
+## Guidelines
+
+- Use sentence case for headers: "User authentication flow" not "User Authentication Flow"
+- Maximum header depth is H3 - never use H4 or beyond
+- Every document must include at least one Mermaid diagram
+- Embed LLM hints in HTML comments for AI tool guidance
+- Use kebab-case for filenames: `user-authentication.md`
+
+## Template Usage
+
+When creating new documentation:
+
+1. Start from the appropriate template in `docs/*/TEMPLATE.md`
+2. Fill in ALL sections - work through "not applicable" sections with AI assistance
+3. Remove placeholder text but keep section headers
+4. Add relevant Mermaid diagrams
+
+## Diagram Requirements
+
+Use Mermaid.js for all diagrams. Supported types:
+
+```mermaid
+graph LR
+    A[flowchart] --> B[sequence]
+    B --> C[state]
+    C --> D[ERD]
+```
+
+Always verify diagrams render correctly before committing.
+
+## LLM Hints
+
+Embed hints for AI tools using HTML comments:
+
+```markdown
+<!-- LLM HINT: This section covers X. Key context: Y. -->
+```
+
+Place hints at the start of complex sections to provide context.
+
+## Context
+
+This repository serves as a reference for markdown template best practices. Documentation quality directly impacts LLM productivity - poor structure leads to wasted tokens and broken inference. These rules enforce the consistency needed for both human and AI consumers.
